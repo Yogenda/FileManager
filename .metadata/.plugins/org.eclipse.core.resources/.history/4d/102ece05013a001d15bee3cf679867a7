@@ -1,0 +1,14 @@
+package org.yogi;
+
+import java.util.Scanner;
+
+public class BubbleSort {
+
+	public static void main(String[] args) {
+		int i,n;
+		int[] a = new int[20];
+		Scanner sc = new Scanner(System.in);
+		
+	}
+
+}
