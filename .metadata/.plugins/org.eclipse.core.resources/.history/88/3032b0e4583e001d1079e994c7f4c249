@@ -5,13 +5,11 @@ import java.util.Scanner;
 public class Driver {
 
 	public static void main(String[] args) {
-		final String ROOT_DIRECTORY_PATH = "D:\\javaProgram";
+		final String ROOT_DIRECTORY_PATH="D:\\javaProgram";
 		LockedMeBO bo = new LockedMeBO();
 		Scanner sc = new Scanner(System.in);
 		String fileName;
 		int ch, ch1;
-		boolean x = false, y = false;
-
 		System.out.println("Welcome to LockedMe");
 		System.out.println("Developer Info");
 		System.out.println("Mr.Yogendra");
@@ -20,8 +18,8 @@ public class Driver {
 			System.out.println("2. Edit");
 			System.out.println("3. Exit");
 			System.out.println("Enter the choise");
-			ch = sc.nextInt();
-			switch (ch) {
+			ch = sc. nextInt();
+			switch(ch) {
 			case 1:
 				bo.displayFilesInAscendingOrder(ROOT_DIRECTORY_PATH);
 				break;
@@ -35,12 +33,12 @@ public class Driver {
 					ch1 = sc.nextInt();
 					String newfile;
 					switch (ch1) {
-					case 1:
+					case 1: 
 						System.out.println("Enter the name to Create new File");
-						Scanner nc = new Scanner(System.in);
-						newfile = nc.nextLine();
-						bo.addFile(newfile, ROOT_DIRECTORY_PATH);
-						break;
+                        Scanner nc=new Scanner(System.in);
+                        newfile=nc.nextLine();
+                        bo.addFile(newfile, ROOT_DIRECTORY_PATH);
+                        break;
 					case 2:
 						fileName = readFileName(sc);
 						bo.deleteFile(fileName, ROOT_DIRECTORY_PATH);
@@ -48,32 +46,18 @@ public class Driver {
 					case 3:
 						fileName = readFileName(sc);
 						bo.searchFile(fileName, ROOT_DIRECTORY_PATH);
-						break;
-					case 4:
-						y = true;
-						break;
-					default:
-						y = false;
 					}
-				} while (y == false);
-				break;
-			case 3:
-				x = true;
-				break;
-			default:
-				x = false;
-				System.out.println("---Invalid Option Please try again---");
+				}while(ch1<=3);
 				break;
 			}
-		} while (x == false);
+		}while (ch<3);
 
 	}
-
 	private static String readFileName(Scanner sc) {
 		System.out.println("Enter the name of the file");
 		sc.nextLine();
 		String fileName = sc.nextLine();
-		return fileName;
+		return fileName;	
 	}
-
+	
 }
